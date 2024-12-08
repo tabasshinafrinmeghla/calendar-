@@ -278,6 +278,10 @@
 
 
 import React, { useState } from 'react';
+import RealTimeClock from './Component/RealTimeClock';
+
+
+
 
 const Calendar = () => {
   const today = new Date();
@@ -307,7 +311,7 @@ const Calendar = () => {
   };
 
   const handleDateClick = (day) => {
-    alert(`You clicked on ${day}/${currentMonth + 1}/${currentYear}`);
+    alert(`Hello ${day}/${currentMonth + 1}/${currentYear}`);
   };
 
   const generateCalendar = () => {
@@ -342,7 +346,11 @@ const Calendar = () => {
   };
 
   return (
-    <div className="w-80 mx-auto border rounded-lg shadow-lg p-4 bg-white">
+    <div className=' '>
+
+     <RealTimeClock></RealTimeClock>
+
+      <div className="w-96 h-96 mx-auto border rounded-lg shadow-lg p-4 m-10 bg-white">
       {/* Header */}
       <div className="flex justify-between items-center mb-4">
         <button
@@ -376,6 +384,7 @@ const Calendar = () => {
 
       {/* Calendar Days */}
       <div className="grid grid-cols-7 gap-2">{generateCalendar()}</div>
+    </div>
     </div>
   );
 };
